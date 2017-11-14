@@ -21,6 +21,7 @@ public class JuegoActivity extends AppCompatActivity {
     TextView tvTitulo;
     ImageView ivCaratula;
     int musica;
+    String tituloMusica;
     MediaPlayer mp;
 
     @Override
@@ -29,8 +30,10 @@ public class JuegoActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         setContentView(R.layout.activity_juego);
         tvTitulo= (TextView)findViewById(R.id.tvTitulo);
-        tvTitulo.setText(bundle.getString("titulo"));
+        tvTitulo.setText(bundle.getString("nombre"));
         ivCaratula= (ImageView)findViewById(R.id.ivCaratula);
+
+        tituloMusica=bundle.getString("tituloMusica");
         //ivCaratula.setImageResource(bundle.getInt("caratula"));
 
 
@@ -49,7 +52,7 @@ public class JuegoActivity extends AppCompatActivity {
         }
         else{
             mp.start();
-            Toast.makeText(this,"Titulo",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,tituloMusica,Toast.LENGTH_LONG).show();
         }
         //finish();
     }

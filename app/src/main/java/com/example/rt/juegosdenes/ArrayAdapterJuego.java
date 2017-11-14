@@ -62,7 +62,7 @@ public class ArrayAdapterJuego extends ArrayAdapter<Juego> {
         Glide.with(context).load(property.getCaratula()).into(ivCaratula);
         return view;
     }
-
+    /*
     public int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
         final int height = options.outHeight;
         final int width = options.outWidth;
@@ -93,4 +93,5 @@ public class ArrayAdapterJuego extends ArrayAdapter<Juego> {
         options.inJustDecodeBounds = false;
         return BitmapFactory.decodeResource(res, resId, options);
     }
+    */
 }

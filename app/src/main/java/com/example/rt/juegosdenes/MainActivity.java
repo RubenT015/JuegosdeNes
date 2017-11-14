@@ -23,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
         lv = (ListView)findViewById(R.id.lv);
 
         juegos = new ArrayList<>();
-        juegos.add(new Juego("Mega Man","Capcom",1987,R.drawable.mega_man,R.raw.mega_man));
-        juegos.add(new Juego("Blaster Master","Sunsoft",1988,R.drawable.blaster_master,R.raw.blaster_master));
-        juegos.add(new Juego("Castlevania","Konami",1987,R.drawable.castlevania,R.raw.castlevania));
-        juegos.add(new Juego("Contra","Konami",1988,R.drawable.contra,R.raw.contra));
+        juegos.add(new Juego("Mega Man","Capcom","Cut Man",1987,R.drawable.mega_man,R.raw.mega_man));
+        juegos.add(new Juego("Blaster Master","Sunsoft","Zone 1",1988,R.drawable.blaster_master,R.raw.blaster_master));
+        juegos.add(new Juego("Castlevania","Konami","Stage 1",1987,R.drawable.castlevania,R.raw.castlevania));
+        juegos.add(new Juego("Contra","Konami","Stage 1",1988,R.drawable.contra,R.raw.contra));
 
 
         ArrayAdapterJuego arrayAdapter = new ArrayAdapterJuego(this,0,juegos );
@@ -39,9 +39,10 @@ public class MainActivity extends AppCompatActivity {
 
                 Intent i = new Intent(MainActivity.this, JuegoActivity.class);
                 String message = "abc";
-                i.putExtra("titulo",juegos.get(position).getNombre());
+                i.putExtra("nombre",juegos.get(position).getNombre());
                 i.putExtra("caratula",juegos.get(position).getCaratula());
                 i.putExtra("musica",juegos.get(position).getMusica());
+                i.putExtra("tituloMusica",juegos.get(position).getTituloMusica());
                 //i.putExtra("style",R.style.Theme4);
                 startActivity(i);
             }
